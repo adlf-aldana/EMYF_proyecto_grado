@@ -25,18 +25,9 @@ import {
 } from './../../../themes/icons';
 
 class ViewUser extends Component{
-	constructor(){
-		super()
-		this.state = {
-			checked: true
-		}
-		this.handlChange = this.handlChange.bind(this)
-	}
-	handlChange(checked){
-		this.setState({checked})
-	}
+	
 	render(){
-		const { checked } = this.state;
+		
 		return(
 			<Contenedor>
 				<Container>
@@ -88,11 +79,10 @@ class ViewUser extends Component{
 									<td>1das</td>
 									<td>1df</td>
 									<td>
-										<Switch onChange={this.handlChange}
-										checked={this.state.checked}>
+										<Switch>
 											
 										</Switch>
-										<p>es {this.state.checked ? 'on' : 'off'}</p>
+										
 									</td>
 										
 								</tr>
