@@ -41,7 +41,7 @@ class PlanillaPatronal extends Component{
 				</Header>
 				<ContainerTable>
 					
-					<table border="2" id="tabla" ref={this.table} summary="Requerimiento de material">
+					<table border="2" id="tabla">
 						<thead>
 							<tr>
 								<th colSpan="5" scope="col">EMPRESA: EMPRESA MINERA YANG FANG S.A</th>
