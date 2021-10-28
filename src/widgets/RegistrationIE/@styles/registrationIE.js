@@ -159,7 +159,7 @@ export const Title = styled.p`
 export const ContenidoTable = styled.div`
   grid-area: contenido;
   overflow:auto;
-  padding: 40px 0 0 0;
+  padding: 40px 10px 10px 10px;
   display: grid;
   grid-template-columns:max-content;
   

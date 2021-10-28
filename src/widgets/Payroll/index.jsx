@@ -35,7 +35,9 @@ class PlanillaPayroll extends Component{
 					<NewButton>
 					<FontAwesomeIcon icon={faPlus}/> &nbsp;Crear
 					</NewButton>
-					<ReportButton>
+					<ReportButton onClick={()=>{
+							this.props.history.push('/reportPayroll');
+						}}>
 						<FontAwesomeIcon icon={faFolderOpen}/> &nbsp;Reportes
 					</ReportButton>
 				</Header>

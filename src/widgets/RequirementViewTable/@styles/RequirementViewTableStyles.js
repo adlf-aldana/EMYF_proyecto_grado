@@ -62,7 +62,7 @@ export const BackButton = styled.button`
 
 export const DownloadButton = styled.button`
 	grid-area: download;
-	display: grid;
+	
     -webkit-box-pack: center;
     -webkit-justify-content: center;
     -ms-flex-pack: center;
@@ -71,14 +71,14 @@ export const DownloadButton = styled.button`
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
-    height: 40px;
-    width: 40px;
-    border-radius: 50%;
+    height: 30px;
+    width: 120px;
+    border-radius: 20px;
     border: 0;
-    background-color: transparent;
-    margin-left: 20px;
+    background-color: #626fbf;
+    margin-right: 10px;
     color: #ffffff;
-    font-size: 20px;
+    font-size: 12px;
 `;
 
 

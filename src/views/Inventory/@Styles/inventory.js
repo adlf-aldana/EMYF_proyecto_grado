@@ -149,11 +149,11 @@ export const ContenidoTable = styled.div`
   
   display: grid;
   overflow:auto;
-  padding: 40px 10px 10px 10px;
+  padding: 40px 20px 10px 20px;
   display: grid;
   grid-template-columns:min-content;
   
-  justify-content: center;
+  justify-content: left;
   grid-template-areas:"tableData";
 
 

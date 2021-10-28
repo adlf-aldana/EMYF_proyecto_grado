@@ -6,12 +6,14 @@ import {
 	Header,
 	BackButton,
 	Title,
+	DownloadButton,
 	ContainerTable
 } from './../RequirementViewTable/@styles/RequirementViewTableStyles';
 
 import {
 	FontAwesomeIcon,
 	faChevronLeft,
+	faDownload
 } from './../../themes/icons';
 
 class RequirimentPersonalTable extends Component{
@@ -31,6 +33,9 @@ class RequirimentPersonalTable extends Component{
 					<Title>
 						REQUERIMIENTO DE PERSONAL
 					</Title>
+					<DownloadButton>
+						<FontAwesomeIcon icon={faDownload}/>&nbsp;Descargar PDF
+					</DownloadButton>
 					
 				</Header>
 

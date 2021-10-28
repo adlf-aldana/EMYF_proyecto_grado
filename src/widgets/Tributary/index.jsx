@@ -46,7 +46,9 @@ class PlanillaTributary extends Component{
 					<NewButton>
 					<FontAwesomeIcon icon={faPlus}/> &nbsp;Crear
 					</NewButton>
-					<ReportButton>
+					<ReportButton onClick={()=>{
+							this.props.history.push('/reportTributary');
+						}}>
 						<FontAwesomeIcon icon={faFolderOpen}/> &nbsp;Reportes
 					</ReportButton>
 				</Header>

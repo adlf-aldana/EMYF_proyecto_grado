@@ -20,7 +20,9 @@ import Disenable from './../widgets/DisenableHis/';
 import NewRequi from './../widgets/NewRequirementM/';
 import NewRequiPersonal from './../widgets/NewRequiremPer/';
 import RequirimentPersonalTable from './../widgets/RequirimentPersonalTable/';
-
+import ReportPayroll from './../widgets/ReportPayroll/';
+import ReportTributary from './../widgets/ReportTributary/';
+import ReportPatronal from './../widgets/ReportPatronal/'; 
 
 const Routers = () => (
 	<Switch>
@@ -129,6 +131,27 @@ const Routers = () => (
 			exact path="/requirimentPersonal" render={() => {
 				const isSession = localStorage.session !== undefined ? true : false;
 				return isSession ? <RequirimentPersonalTable /> : <Redirect to="/" />;
+			}}
+		/>
+
+		<Route
+			exact path="/reportPayroll" render={() => {
+				const isSession = localStorage.session !== undefined ? true : false;
+				return isSession ? <ReportPayroll/> : <Redirect to="/" />;
+			}}
+		/>
+
+		<Route
+			exact path="/reportTributary" render={() => {
+				const isSession = localStorage.session !== undefined ? true : false;
+				return isSession ? <ReportTributary/> : <Redirect to="/" />;
+			}}
+		/>
+
+		<Route
+			exact path="/reportPatronal" render={() => {
+				const isSession = localStorage.session !== undefined ? true : false;
+				return isSession ? <ReportPatronal/> : <Redirect to="/" />;
 			}}
 		/>
 	</Switch>

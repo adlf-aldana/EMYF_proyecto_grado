@@ -135,28 +135,17 @@ class RegistrationIE extends Component{
 						</thead>
 						<tbody>
 
-							{/*
-								listMaterial.map(({
-											name,
-											minimumAmount,
-											unit,
-											amount,
-											priceUnit,
-											income,
-											egress,
-											balance
-										}, index)=>{
-											return(
-												<tr key={index}>
-													<td>{index+1}</td>
-													<td>{name}</td>
-													<td>{minimumAmount}</td>
-													<td>{unit}</td>
-													<td>{amount}</td>
-													<td>{priceUnit}</td>
-													<td>{Income}</td>
-													<td>{egress}</td>
-													<td>{balance}</td>
+							
+												<tr>
+													<td>1</td>
+													<td>name</td>
+													<td>minimumAmount</td>
+													<td>unit</td>
+													<td>amount</td>
+													<td>priceUnit</td>
+													<td>Income</td>
+													<td>egress</td>
+													<td>balance</td>
 													<td>
 														<EditIcon onClick={this.openModalEdit}>
 															<FontAwesomeIcon icon={faPen} />
@@ -174,9 +163,7 @@ class RegistrationIE extends Component{
 														<Egress onClick={this.openModalSec}>Egreso</Egress>
 													</td>
 												</tr>
-												)
-										})*/
-									}
+												
 									
 						</tbody>
 					</table>
