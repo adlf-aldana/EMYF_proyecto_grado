@@ -1,44 +1,47 @@
-import React, { Component } from "react";
+import React, {Component} from 'react';
+import { withRouter,Redirect } from 'react-router-dom';
 
-import { withRouter } from "react-router-dom";
-
-import { Input10 } from './../@styles/personal';
 import {
 	Container,
 	Header,
 	BackButton,
 	Title,
-	ContenidoTable,
-	Input,
-	InputSec
-} from './../../NewRequirementM/@styles/newRequiM';
+	ContainerTable
+} from './../RequirementViewTable/@styles/RequirementViewTableStyles';
 
 import {
 	FontAwesomeIcon,
 	faChevronLeft,
-} from './../../../themes/icons';
+} from './../../themes/icons';
 
- class NuevoPersonal extends Component{
- 	render(){
- 		return(
- 				<Container>
+class RequirimentPersonalTable extends Component{
+	
+	render(){
+		
+		return(
+		
+		
+			<Container>
 				<Header>
 					<BackButton onClick={()=>{
-							this.props.history.push('administrator/requirimentsPersonal');
-						}}>
+						this.props.history.push('/administrator/requirimentsPersonal');
+					}}>
 						<FontAwesomeIcon icon={faChevronLeft}/>
 					</BackButton>
-					<Title> NUEVO REQUERIMIENTO DE PERSONAL</Title>
+					<Title>
+						REQUERIMIENTO DE PERSONAL
+					</Title>
 					
 				</Header>
 
-				<ContenidoTable>
+
+				<ContainerTable>
 					
 					<table border="2" id="tabla">
 						<thead>
 							<tr>
 								<th colSpan="4" scope="col">EMPRESA: EMPRESA MINERA YANG FANG S.A</th>
-								<th colSpan="2" scope="col">FECHA: <Input type="date"/></th>
+								<th colSpan="2" scope="col">FECHA: </th>
 								<th colSpan="1" scope="col">CÓDIGO:</th>
 																
 							</tr>
@@ -47,7 +50,7 @@ import {
 							<tr>
 								<td>Solicitud:</td>
 								<th colSpan="6">
-									<Input10></Input10>
+									
 								</th>
 							</tr>
 						</tbody>
@@ -71,22 +74,22 @@ import {
 										<tr>
 											<th>1</th>
 											<td>
-												<Input></Input>
+												
 											</td>
 											<td>
-												<InputSec></InputSec>
+												
 											</td>
 											<td>
-												<InputSec></InputSec>
+												
 											</td>
 											<td>
-												<Input type="date"></Input>
+												
 											</td>
 											<td>
-												<Input></Input>
+												
 											</td>
 											<td>
-												<Input></Input>
+												
 											</td>
 											
 											
@@ -101,10 +104,12 @@ import {
 						
 					</table>
 
-				</ContenidoTable>
-			</Container>
- 			);
- 	}
- }
+				</ContainerTable>
+			
 
- export default withRouter( NuevoPersonal );
+			</Container>
+		)
+	}
+}
+
+export default withRouter( RequirimentPersonalTable );

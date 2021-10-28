@@ -18,41 +18,13 @@ import {
 	faPlus
  } from './../../themes/icons';
 
-import { getListCodeRequiEmployees } from './../../apiRest/requests';
+
 
 class RequirementsPer extends Component{
-	state={
-		listRequirementsE:[],
-		loading:false
-	}
-
-	recoveryData = ()=>{
-		this.setState({
-			loading:true
-		})
-		getListCodeRequiEmployees(({data})=>{
-			this.setState({
-				listRequirementsE:data.data,
-				loading:false
-			})
-		});
-	}
-	componentDidMount(){
-		this.recoveryData();
-	}
+	
 	render(){
-		const { listRequirementsE, loading } = this.state;
-		const LoadingCard =(
-			<Loading>
-				
-				<ContainerRequirements>
-					<Info/>
-					<Info/>
-				</ContainerRequirements>
-				<Button/>
-				<ContainerDate/>
-			</Loading>
-		);
+		
+			
 		return (
 
 			<Container>
@@ -65,13 +37,9 @@ class RequirementsPer extends Component{
 				</Header>
 				<ContainerItem>	
 							
-					{
-						loading ? LoadingCard : listRequirementsE.map(_data=>{
-							return(
-								<ItemPersonal key={_data.CODE} data={{..._data}}/>
-							)
-						})
-					}
+					
+								<ItemPersonal/>
+							
 				</ContainerItem>
 			</Container>
 				

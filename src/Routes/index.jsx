@@ -19,6 +19,8 @@ import EnableRegistration from './../widgets/EnableRegistration/';
 import Disenable from './../widgets/DisenableHis/';
 import NewRequi from './../widgets/NewRequirementM/';
 import NewRequiPersonal from './../widgets/NewRequiremPer/';
+import RequirimentPersonalTable from './../widgets/RequirimentPersonalTable/';
+
 
 const Routers = () => (
 	<Switch>
@@ -122,6 +124,13 @@ const Routers = () => (
 			const isSession=localStorage.session!==undefined?true:false;
 			return isSession?(<NewRequiPersonal/>):(<Redirect to="/"/>)
 		}}/>
+
+		<Route
+			exact path="/requirimentPersonal" render={() => {
+				const isSession = localStorage.session !== undefined ? true : false;
+				return isSession ? <RequirimentPersonalTable /> : <Redirect to="/" />;
+			}}
+		/>
 	</Switch>
 );
 

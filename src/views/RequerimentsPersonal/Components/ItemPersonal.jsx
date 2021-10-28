@@ -28,7 +28,7 @@ class ItemPersonal extends Component{
 
 	render(){
 		
-		const { CODE, quantity, skills, date } = this.props.data;
+		
 		return(
 		<ContainerPersona>	
 			<ContainerForm>
@@ -40,7 +40,7 @@ class ItemPersonal extends Component{
 						</Info>
 							
 						<Info bold={false} isInfoSpecification={true}>
-							{CODE}
+							CODE
 						</Info>
 
 						<Info bold={true} isInfoSpecification={false}>
@@ -48,13 +48,13 @@ class ItemPersonal extends Component{
 						</Info>
 							
 						<Info bold={false} isInfoSpecification={true}>
-							{skills}
+							skills
 						</Info>
 					</ContainerInfo>
 
 					<ContainerAmount>
 						<ContainerInfoAmount>
-							<InfoAmount>{quantity}</InfoAmount>
+							<InfoAmount>3</InfoAmount>
 							<InfoUnit>Cantidad</InfoUnit>
 						</ContainerInfoAmount>
 					</ContainerAmount>
@@ -62,7 +62,7 @@ class ItemPersonal extends Component{
 
 				<Button onClick={()=>{
 					console.log(this.props);
-					this.props.history.push(`/requirements/${CODE}`);
+					this.props.history.push(`/requirimentPersonal`);
 				}}>
 					<FontAwesomeIcon icon={ faEye }/>
 					&nbsp;Revisar
@@ -70,7 +70,7 @@ class ItemPersonal extends Component{
 
 				<ContainerDate>
 					<InfDate isLeft={false} isInfDate={false}>
-						{date}
+						
 					</InfDate>
 				</ContainerDate>
 			</ContainerForm>
