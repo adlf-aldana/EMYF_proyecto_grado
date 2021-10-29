@@ -9,6 +9,11 @@ export const Container = styled.div`
 						           "contenido"
 						           "button";
 	grid-gap: 30px;
+
+  @media screen and (max-width: 980px){
+    display: grid;
+    grid-template-columns: 100%;
+  }
 `;
 
 
@@ -54,26 +59,28 @@ export const Title = styled.p`
 	text-align: center;
 `;
 
-export const Contenido = styled.div`
-  display: grid;
-  padding: 10px 50px;
+export const ContainerContenido = styled.div`
   grid-area: contenido;
+  padding: 10px 70px;
+  display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 250px 1fr;
-  grid-template-areas:"first"
-                      "second";
-`;
+  grid-template-rows: 1fr auto;
+  grid-template-areas: "interfaz1"
+                        "interfaz2";
 
-export const PartFirst = styled.div`
-  display: grid;
-  grid-area: first;
-  grid-template-columns: auto 280px;
-  grid-template-rows: 1fr;
-  grid-template-areas:"info photo";
+  @media screen and (max-width: 980px){
+    padding: 10px 10px;
+  }
+
 `;
-export const Info = styled.div`
+export const ContainerPI = styled.div`
+  grid-area: interfaz1;
   display: grid;
-  grid-area: info;
+   grid-gap: 15px;
+  grid-template-columns: 1fr auto;
+  grid-template-rows: 1fr;
+  grid-template-areas: "info1 photo";
+
 
 `;
 export const Photo = styled.div`
@@ -86,103 +93,146 @@ export const Photo = styled.div`
     border: 1px;
     border-color: #626fbf;
     box-shadow: 0px 5px 6.7px 0.4px rgba(0, 0, 0, 0.25);
+
+    @media screen and (max-width: 980px){
+      width: 100px;
+      height: 100px;
+      margin-block-start: 15px;
+    place-self: flex-start;
+    }
 `;
 
-
-export const PartSecond = styled.div`
-  display: grid;
-  grid-area: second;
-  witgh: 100%;
-  height: 100%;
+export const Info1 = styled.div`
+    grid-area: info1;
+    position: relative;
+    grid-template-columns: 1fr;
+    grid-auto-rows: 30px auto;
+    grid-template-areas: "titulo"
+                        "dataPersonal";
+    @media screen and (max-width: 980px){
+    grid-auto-rows: 30px auto;
+  }
+                            
 `;
 
-export const ContenidoTable = styled.div`
- 
-  overflow:auto;
-  padding: 10px 10px 10px 10px;
-  display: grid;
-  grid-template-columns:max-content;
-  
-  justify-content: center;
-  grid-template-areas:"tableData";
+export const DataPersonal = styled.div`
+    grid-area: dataPersonal;
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(2,minmax(30px, 50%));
+    grid-auto-flow: dense;
+    grid-auto-rows: min-content;
+    width: 98%;
+    -webkit-box-pack: center;
 
+    @media screen and (max-width: 980px){
+      grid-template-columns: repeat(1,minmax(30px, 100%));
+    }
+`;
 
-  @media screen and (max-width: 980px){
+export const Info2 = styled.div`
+    grid-area: interfaz2;
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-auto-rows: auto 30px auto 30px auto;
+    grid-template-areas: "first"
+                         "tituloGen"
+                         "dataGen"
+                         "tituloLab"
+                         "dataLab";
+`;
+
+export const First = styled.div`
+    grid-area: first;
+    position: relative;
+`;
+
+export const TituloGen = styled.div`
+    grid-area: tituloGen;
+    position: relative;
+`;
+
+export const TituloLab = styled.div`
+    grid-area: tituloLab;
+    position: relative;
+`;
+
+export const DataGen = styled.div`
+    grid-area: dataGen;
+    position: relative;
+    padding-block-start: 30px;
+`;
+
+export const DataLab = styled.div`
+    grid-area: dataLab;
+    position: relative;
+    padding-block-start: 30px;
+`;
+
+export const Datos = styled.div`
     
-  }
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(4,minmax(30px,auto));
+    grid-auto-flow: dense;
+    grid-auto-rows: min-content;
+    width: 100%;
+    -webkit-box-pack: center;
 
-  table {
-    
-    grid-area:tableData;
-    border-collapse: collapse;
-    border-radius: 10px;
-    overflow: hidden;
-    background: #ffffff;
-  }
-  th, td {  
-    color: #ffffff;
-    padding: 10px;
-    text-align: center;
-  }
+    @media screen and (max-width: 980px){
+      grid-template-columns: repeat(2,minmax(30px, 50%));
+    }
 
-  th, td {   
-    // border: 1.5px solid #ffae28;
-  }
-
-  table {    
-    height: 50px;
-    border-collapse: collapse;
-  }
-
-  table tbody tr:nth-child(even){
-   
-    background: #eceffe;
-  }
-
-
-  table tbody tr{  
-
-    transition: 0.3s ease;
-  }  
-
-  table tbody th, td {
-   
+`;
+export const Text = styled.p`
     color: #626fbf;
-    padding: 10px;
+    font-weight: bold;
+    padding: 0 10px;
+    text-align: left;
+
+
+    @media screen and (max-width: 980px){
+      font-size: 14px;
+      margin: 0 15px;
+    }
+`;
+
+
+export const Titulo = styled.p`
+    grid-area: titulo;
+    color: #ffffff;
+    position: relative;
+    font-weight: bold;
     text-align: center;
-  }
-
-  table thead tr{
-    background: #626fbf !important;
-    
-  }
-
-  table tbody tr:hover {
-    background-color: #ececec;
-    transition: 0.3s ease;
-  }
+    width: 98%;
+    height: 40px;
+    background-color: #626fbf;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    padding: 0 10px 0 0;
+    display: grid;
+    align-content: center;
+    @media screen and (max-width: 980px){
+      font-size: 14px;
+    }
 
 `;
+
 export const Input = styled.input`
     text-decoration: none;
-    width: 200px;
+    padding: 10px;
+    width: auto;
     outline: none;
     font-size: 16px;
     color: #000000;
     text-align: left;
     background: transparent;
     border-color: transparent;
-`;
 
-export const InputSec = styled.input`
-    text-decoration: none;
-    width: 65px;
-    outline: none;
-    font-size: 16px;
-    color: #000000;
-    text-align: left;
-    background: transparent;
-    border-color: transparent;
+    @media screen and (max-width: 980px){
+      font-size: 12px;
+    }
 `;
 
 

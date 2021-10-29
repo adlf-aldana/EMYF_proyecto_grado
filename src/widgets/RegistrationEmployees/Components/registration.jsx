@@ -3,6 +3,7 @@ import { withRouter } from 'react-router-dom';
 
 import { Select } from '@rmwc/select';
 import { Radio } from '@rmwc/radio';
+
 import '@rmwc/select/select.css';
 import '@material/select/dist/mdc.select.css';
 import '@material/floating-label/dist/mdc.floating-label.css';
@@ -22,14 +23,21 @@ import {
 	Header,
 	BackButton,
 	Title,
-	Contenido,
-	PartFirst,
-	Info,
+	ContainerContenido,
+	ContainerPI,
 	Photo,
-	PartSecond,
-	ContenidoTable,
+	Info1,
+	DataPersonal,
+	Info2,
+	First,
+	TituloGen,
+	TituloLab,
+	DataGen,
+	DataLab,
+	Datos,
+	Titulo,
+	Text,
 	Input,
-	InputSec,
 	ButtonSave
 } from './../@styles/registrationEmployees';
 
@@ -42,6 +50,7 @@ import {
 class RegistrarEmpleado extends Component{
 	render() {
 
+		
 		return(
 
 			<Container>
@@ -54,78 +63,68 @@ class RegistrarEmpleado extends Component{
 					<Title> REGISTRAR EMPLEADO</Title>
 					
 				</Header>
-				<Contenido>
-					<PartFirst>
-						<Info>
-							<ContenidoTable>
-								<table>
-									<thead>
-										<tr>
-											<th colSpan="3" scope="col">DATOS PERSONALES</th>
-										</tr>
-									</thead>
-									<tbody>
-										<tr>
-											<td>Apellido Paterno:
-												<Input></Input>
-											</td>
-											<td>Apellido Materno:
-												<Input></Input>
-											</td>
-											<td>Nombres:
-												<Input></Input>
-											</td>
-										</tr>
-										<tr>
-											<td>
-								
-												<Select label="Tipo de documento" options={['CI', 'Pasaporte']}/>
-											</td>
-											<td>Número de documento:
-												<Input></Input>
-											</td>
-											
-											<td>
-												<Select label="Expedido" options={['CH', 'LP','CB','OR','PT','TJ','SC','BE','PD']}/>
-											</td>
-										</tr>
-										<tr>
-											<td>Fecha de Nacimiento:
-												<Input type="date"></Input>
-											</td>
-											<td>Sexo &nbsp;
-												<Radio
-											    label="Femenino"
-											    value="F"
-											    name="Sexo"
-											    onChange={evt => console.log(evt.currentTarget.value)}
-											  	/>
-											  	<Radio
-											    label="Masculino"
-											    value="M"
-											    name="Sexo"
-											    onChange={evt => console.log(evt.currentTarget.value)}
-											  	/>
-											</td>
-										</tr>
-									</tbody>
-								</table>
-							</ContenidoTable>
+				<ContainerContenido>
+					<ContainerPI>
+						<Info1>
+						<Titulo>DATOS PERSONALES</Titulo>
+						<DataPersonal>
+						
+							<Text>Nombre:
+								<Input placeholder="Introducir nombre"></Input>
+							</Text>
+							<Text>Apellido paterno:
+								<Input placeholder="Introducir apellido paterno"></Input>
+							</Text>
+							<Text>Apellido materno:
+								<Input placeholder="Introducir apellido materno"></Input>
+							</Text>
+							<Text>Fecha de nacimiento:
+								<Input type="date"></Input>
+							</Text>
 							
-						</Info>
+							
+						</DataPersonal>	
+						</Info1>
+						
 						<Photo></Photo>
-					</PartFirst>
-					<PartSecond>
-						<ContenidoTable>
-							<table>
-							<thead>
-								<tr>
-									<th colSpan="6" scope="col">DATOS GENERALES</th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr>
-									<td>Persona con discapacidad &nbsp;
+					</ContainerPI>
+					<Info2>
+						<First>
+							<Datos>
+								<Text>
+								<Select label="Tipo de documento" options={['CI', 'Pasaporte']}/>
+
+							</Text>
+							<Text>Nro. de documento:
+								<Input placeholder="Documento"></Input>
+							</Text>					
+						<Text>
+							<Select label="Expedido" options={['CH', 'LP','CB','OR','PT','TJ','SC','BE','PD']}/>
+						</Text>	
+						<Text>
+							Sexo: &nbsp;
+								<Radio
+									label="Femenino"
+									value="F"
+									name="Sexo"
+									onChange={evt => console.log(evt.currentTarget.value)}
+									/>
+									<Radio
+									label="Masculino"
+									value="M"
+									name="Sexo"
+									onChange={evt => console.log(evt.currentTarget.value)}
+									/>
+							</Text>
+
+							</Datos>
+						</First>
+						<TituloGen>
+							<Titulo>DATOS GENERALES</Titulo>
+						</TituloGen>
+						<DataGen>
+							<Datos>
+								<Text>Persona con discapacidad &nbsp;
 										<Radio
 									    label="Sí"
 									    value="1"
@@ -138,8 +137,8 @@ class RegistrarEmpleado extends Component{
 									    name="discapacidad"
 									    onChange={evt => console.log(evt.currentTarget.value)}
 									  	/>
-									</td>
-									<td>Tutor de persona con discapacidad&nbsp;
+									</Text>
+									<Text>Tutor de persona con discapacidad&nbsp;
 										<Radio
 									    label="Sí"
 									    value="1"
@@ -152,8 +151,8 @@ class RegistrarEmpleado extends Component{
 									    name="tutor"
 									    onChange={evt => console.log(evt.currentTarget.value)}
 									  	/>
-									</td>
-									<td>Jubilado &nbsp;
+									</Text>
+									<Text>Persona jubilado &nbsp;
 										<Radio
 									    label="Sí"
 									    value="1"
@@ -166,8 +165,8 @@ class RegistrarEmpleado extends Component{
 									    name="jubilado"
 									    onChange={evt => console.log(evt.currentTarget.value)}
 									  	/>
-									</td>
-									<td>Aportes AFP &nbsp;
+									</Text>
+									<Text>Aportes AFP &nbsp;
 										<Radio
 									    label="Sí"
 									    value="1"
@@ -180,26 +179,22 @@ class RegistrarEmpleado extends Component{
 									    name="aporte"
 									    onChange={evt => console.log(evt.currentTarget.value)}
 									  	/>
-									</td>
-								</tr>
-							</tbody>
-
-
-							<thead>
-								<tr>
-									<th colSpan="6" scope="col">DATOS LABORALES</th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr>
-									<td>Fecha de ingreso:&nbsp;
+									</Text>
+							</Datos>
+						</DataGen>
+						<TituloLab>
+							<Titulo>DATOS LABORALES</Titulo>
+						</TituloLab>
+						<DataLab>
+							<Datos>
+								<Text>Fecha de ingreso:&nbsp;
 									<Input type="date"></Input>
-									</td>
-									<td>Fecha de retiro:&nbsp;
-										<Input type="date"></Input>
-									</td>
-									<td>	
-										<Select label="Motivo de retiro">
+								</Text>
+								<Text>Fecha de retiro:&nbsp;
+									<Input type="date"></Input>
+								</Text>
+								<Text>	
+									<Select label="Motivo de retiro">
 										  <option value="1">Retiro voluntario del trabajador</option>
 										  <option value="2">Vencimiento de contrato</option>
 										  <option value="3">Vencimiento de contrato</option>
@@ -213,8 +208,8 @@ industrial</option>
 										  <option value="9">Robo o hurto por el trabajador</option>
 										  <option value="10">Retiro forzoso</option>
 										</Select>
-									</td>
-									<td>	
+								</Text>
+								<Text>	
 										<Select label="Caja de salud">
 										  <option value="1">Caja Nacional de Salud</option>
 										  <option value="2">Caja Petrolera de Salud</option>
@@ -227,10 +222,8 @@ industrial</option>
 										  <option value="9">Seguro Integral de Salud</option>
 										 
 										</Select>
-									</td>
-								</tr>
-								<tr>
-									<td>AFP &nbsp;
+								</Text>
+								<Text>AFP &nbsp;
 										<Radio
 									    label="AFP Previsión"
 									    value="1"
@@ -243,15 +236,15 @@ industrial</option>
 									    name="afp"
 									    onChange={evt => console.log(evt.currentTarget.value)}
 									  	/>
-									</td>
-									<td>Número AFPs:
-										<Input></Input>
-									</td>
-									<td>	
-										<Select label="Sucursal o ubicación" options={['1']}/>
-									</td>
-									<td>	
-										<Select label="Clasificación laboral">
+								</Text>
+								<Text>Número AFPs:
+									<Input placeholder="Número"></Input>
+								</Text>
+								<Text>	
+									<Select label="Sucursal o ubicación" options={['1']}/>
+								</Text>
+								<Text>	
+									<Select label="Clasificación laboral">
 										  <option value="1">Ocupaciones de dirección en la administración pública y
 empresas</option>
 										  <option value="2">Ocupaciones de profesionales científicos e intelectuales</option>
@@ -263,43 +256,32 @@ empresas</option>
 										  <option value="8">Operadores de instalaciones y maquinarias</option>
 										  <option value="9">Trabajadores no calificados</option>
 										  <option value="10"> Fuerzas armadas</option>
-										</Select>
-									</td>
-								</tr>
-								<tr>
-									<td>	
+									</Select>
+								</Text>
+								<Text>	
 										<Select label="Cargo" options={[]}/>
-									</td>
-									<td>	
+									</Text>
+									<Text>	
 										<Select label="Modalidad de contrato" options={['1','2','3','4 ','5']}/>
-									</td>
-									<td>	
+									</Text>
+									<Text>	
 										<Select label="Tipo de contrato">
 										  <option value="1">Escrito</option>
 										  <option value="2">Verbal</option>
 										</Select>
-									</td>
-									<td>Días pagados:
-										<InputSec></InputSec>
-										Horas pagados:
-										<InputSec></InputSec>
-									</td>
-								</tr>
-								<tr>
-									<td>Días pagados:
-										<InputSec></InputSec>
-									</td>
-									<td>Horas pagados:
-										<InputSec></InputSec>
-									</td>
-									
-								</tr>
-							</tbody>
-							</table>
-						</ContenidoTable>
-					</PartSecond>
-				</Contenido>
-				
+									</Text>
+									<Text>Días pagados:
+										<Input placeholder="Días"></Input>
+									</Text>
+									<Text>Horas pagados:
+										<Input placeholder="Horas"></Input>
+									</Text>
+							</Datos>
+						</DataLab>
+					</Info2>
+
+				</ContainerContenido>
+
 				<ButtonSave>
 					<FontAwesomeIcon icon={faSave}/>&nbsp;Guardar
 				</ButtonSave>
